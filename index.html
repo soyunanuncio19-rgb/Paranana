@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+<section>
+<title>Para Ti 💗</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+
+    <style>
+
+
+
+
+
+
+
+        body{
+
+    background:linear-gradient(
+        -45deg,
+        #ff758c,
+        #ff7eb3,
+        #ffb6c1,
+        #ffd1dc
+    );
+
+    background-size:400% 400%;
+
+    animation:fondo 10s ease infinite;
+
+    text-align:center;
+
+    font-family:'Poppins', sans-serif;
+
+}
+
+        h1{
+    color:white;
+
+    font-size:50px;
+
+    text-shadow:0px 0px 20px white;
+
+    margin:auto;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    animation:titulo 2s forwards,
+               latido 2s infinite 2s,
+               brillo 3s infinite;
+}
+
+        p{
+            color: white;
+            font-size: 25px;
+        }
+        
+        img{
+    width:300px;
+    border-radius:20px;
+    box-shadow:0px 0px 20px white;
+    transition:0.5s;
+}
+.corazon{
+    position:fixed;
+    font-size:30px;
+    animation:flotar 3s infinite;
+    color:white;
+    bottom:0;
+}
+
+@keyframes flotar{
+
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-800px);
+        opacity:0;
+    }
+
+}
+
+
+
+@keyframes fondo{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+
+
+    
+    
+}
+img:hover{
+    transform:scale(1.05);
+}
+button{
+    background:white;
+    color:pink;
+    border:none;
+    padding:15px 25px;
+    border-radius:20px;
+    font-size:20px;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+#carta{
+
+    width:60%;
+
+    margin:auto;
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    display:none;
+
+    background:rgba(255,255,255,0.25);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0px 0px 25px rgba(255,255,255,0.4);
+
+    opacity:0;
+
+transform:translateY(30px);
+
+transition:1s;
+
+}
+
+#carta p{
+    color:white;
+}
+
+#carta h2{
+    color:white;
+}
+
+
+#inicio{
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:black;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:1000;
+
+    transition:1s;
+}
+
+.particula{
+
+    position:fixed;
+
+    width:12px;
+    height:12px;
+
+    background:#ffe6f2;
+
+    border-radius:50%;
+
+    box-shadow:0px 0px 40px white;
+
+    opacity:0.8;
+
+    animation:particulas 5s infinite;
+
+    top:100%;
+    
+
+}
+
+@keyframes particulas{
+
+    0%{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    50%{
+        opacity:0.4;
+    }
+
+    100%{
+        transform:translateY(-1200px);
+        opacity:0;
+    }
+
+}
+
+.galeria{
+
+    display:flex;
+
+    overflow-x:auto;
+
+    gap:30px;
+
+    padding:40px;
+
+    margin-top:40px;
+
+    scroll-behavior:smooth;
+
+    justify-content:flex-start;
+
+}
+
+.galeria img{
+
+    width:280px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    flex-shrink:0;
+
+    transition:0.5s;
+
+    opacity:0.8;
+
+}
+
+.galeria img:hover{
+
+    transform:scale(1.08);
+
+    opacity:1;
+
+    box-shadow:0px 0px 25px white;
+
+}
+
+h2{
+    color:white;
+    text-shadow:0px 0px 10px white;
+    margin-top:30px;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:30px;
+    }
+
+    p{
+        font-size:18px;
+    }
+
+    img{
+        width:90%;
+    }
+
+    #carta{
+        width:85%;
+    }
+
+    .galeria img{
+        width:200px;
+    }
+
+    button{
+        font-size:18px;
+        padding:12px 20px;
+    }
+
+}
+
+
+@keyframes titulo{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes latido{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.03);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+@keyframes brillo{
+
+    0%{
+        text-shadow:0px 0px 10px white;
+    }
+
+    50%{
+        text-shadow:0px 0px 25px white;
+    }
+
+    100%{
+        text-shadow:0px 0px 10px white;
+    }
+
+}
+
+.contenedor{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:30px;
+
+}
+
+section{
+
+    margin-top:80px;
+
+    margin-bottom:80px;
+
+}
+
+#login{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:black;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:2000;
+
+}
+
+input{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    font-size:18px;
+
+    text-align:center;
+
+}
+
+
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+<div id="login">
+
+    <h1>Privado</h1>
+
+    <p>
+        Introduce la contraseña ✨
+    </p>
+
+    <input type="password" id="password">
+
+    <br><br>
+
+    <button onclick="verificar()">
+        Entrar 💗
+    </button>
+
+</div>
+
+
+<div class="contenedor"></div>
+
+    <div class="particula" style="left:10%; animation-delay:0s;"></div>
+<div class="particula" style="left:30%; animation-delay:2s;"></div>
+<div class="particula" style="left:50%; animation-delay:4s;"></div>
+<div class="particula" style="left:70%; animation-delay:1s;"></div>
+<div class="particula" style="left:90%; animation-delay:3s;"></div>
+
+<div id="inicio">
+
+    <h1>
+        Bienvenida 💖
+    </h1>
+
+    <p>
+        Hay algo aquí que hice para ti...
+    </p>
+
+    <button onclick="entrar()">
+        Entrar ✨
+    </button>
+
+</div>
+
+
+    <h1>
+    Para la niña más bonita del mundo 💗
+</h1>
+    
+<img src="foto ella 1.png">
+<div class="galeria">
+
+    <img src="foto ella 1.png">
+
+    <img src="foto2.png">
+
+    <img src="foto3.png">
+
+    <img src="foto4.png">
+
+ <img src="foto5.png">
+
+    <img src="foto6.png">
+
+    <img src="foto7.png">
+
+    <img src="foto8.png">
+
+</div>
+
+    <p>
+    Honestamente no pensé que esto terminaría tan grande XD
+
+    </p>
+    <p>
+        Pero quería hacer algo bonito para ti 💖
+
+</p>
+<button onclick="mostrarCarta()">
+    Ábreme 💌
+</button>
+</section>
+<div id="carta">
+
+    <h2>Para mi princesita hermosa 💖</h2>
+
+
+
+    <p>
+        No sé exactamente cómo explicar todo lo que significas para mí, pero quería intentar hacerlo de una manera especial, aunque sea con una pequeña página xD.
+
+Tal vez no sea perfecta, pero cada detalle que puse aquí lo hice pensando en la personita que más amo, y esa eres tú bb 🫶💗💕💕❤️
+Las fotos del maincra, el texto, incluso el tiempo que pasé haciéndolo, todo lo hice pensando en esa niña que logró volverse tan importante para mí.
+
+Gracias por cada momento que me dejaste compartir contigo, preciosa.
+Por las risas, las conversaciones, los momentos xD, los chats random, las veces que jugamos juntos, todos esos momentos los voy a llevar siempre conmigo, mi niña bella.
+
+Y aunque a veces no encuentre las palabras correctas para decir lo mucho que te amo, quiero que sepas que de verdad me haces feliz.
+Me gusta compartir mi tiempo contigo, hablar contigo, jugar contigo, todo contigo 💗
+
+Eres una niña demasiado especial, y nunca dudes de eso.
+Porque además de ser la más bonita, tienes unos ojitos hermosos, un cabello precioso, una forma de ser única y un corazón demasiado lindo. En serio eres guapísima, divina y la mejor en todo mi niña chiquita 🥺 💗 💗 
+
+No sé qué vaya a pasar en el futuro, si sigamos juntos o si algún día dejamos de hablar, pero sí sé que ahora mismo eres alguien demasiado importante para mí.
+Y quería que esta página fuera una forma de recordártelo, para que puedas entrar y verla las veces que quieras. Solo tú, y nadie más 🫶💗💗❤️💕💕
+    </p>
+
+    <p>
+        
+    </p>
+
+    
+
+
+
+</div>
+<div class="corazon" style="left:10%;">💖</div>
+<div class="corazon" style="left:20%; animation-delay:1s;">💗</div>
+<div class="corazon" style="left:35%; animation-delay:2s;">💘</div>
+<div class="corazon" style="left:50%; animation-delay:0.5s;">💞</div>
+<div class="corazon" style="left:65%; animation-delay:1.5s;">💕</div>
+<div class="corazon" style="left:80%; animation-delay:2.5s;">💓</div>
+<div class="corazon" style="left:90%; animation-delay:3s;">💖</div>
+
+<h2 id="contador"></h2>
+
+<h2 id="mensaje"></h2>
+
+<script>
+
+
+
+function mostrarCarta(){
+
+    let carta = document.getElementById("carta");
+
+    carta.style.display = "block";
+
+    setTimeout(function(){
+
+        carta.style.opacity = "1";
+
+        carta.style.transform = "translateY(0)";
+
+    },100);
+
+}
+
+
+function entrar(){
+
+    let pantalla = document.getElementById("inicio");
+
+    pantalla.style.opacity = "0";
+
+    setTimeout(function(){
+
+        pantalla.style.display = "none";
+
+    },1000);
+
+}
+
+let fechaInicio = new Date("January 17, 2026");
+
+let hoy = new Date();
+
+let diferencia = hoy - fechaInicio;
+
+let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+document.getElementById("contador").innerHTML =
+"Han pasado " + dias + " días desde que nos conocimos 💖";
+
+
+
+let mensajes = [
+
+
+
+    "Me gusta mucho hablar contigo 💗",
+
+    "Tus ojitos son demasiado lindos 🥺",
+
+    "Eres mi personita favorita 💞",
+
+
+    "Amo pasar tiempo contigo 💖",
+
+
+
+   
+
+    "Tu sonrisa es demasiado bonita bb, yo see :3💞💖",
+
+   
+
+    "Te quiero abrazar :3💞💞",
+
+
+
+
+
+
+
+    "Eres demasiado especial para mí 💞",
+
+   
+
+
+
+    "No sabes lo mucho que significas para mí 💖",
+
+
+
+    "Me gusta demasiado compartir tiempo contigo 💗",
+
+    "Eres la niña más bonita del mundo 💞",
+
+    "Sabias que con cada dia que pasa, te ves cada vez mas y mas hermosa?💞💞",
+
+    "Eres lo mejor que me ah pasado mi princesita bella💞💞",
+
+    "Siempre pienso en ti mi niña bella💗",
+
+    "Tu cabello es precioso bb :DDD",
+
+    "Tus mensajes siempre mejoran mi dia :D 💞",
+
+    "Amo Pasar tiempo contigo💞💞",
+
+    "Tienes una forma de ser muy linda 💖",
+
+    "Tienes una linda forma de ser bb💗💞",
+
+    "Eres demasiado importante para mí 💗",
+
+    "💗Eres la mejor mi niña chiquita💗",
+
+    "Mi corazon simpre sera tuyo <33",
+
+    "Me gusta demasiado compartir tiempo contigo💗",
+
+    "Tuuu vales muchisimo bb, nunca lo olvides shi?💗💗",
+
+    "Tu voz me Encata :3",
+
+    "💗Ojala pudieras veter como yo te veo💗",
+
+    "Eres demasiado lindaaa 💗💞",
+
+    "Tus ojos brillan hermoso 💖",
+
+    "Nunca sales de mi cabeza mi princesita hermosa <3",
+
+    "Hablar contigo siempre mejora mi dia, sabias? :D",
+
+    "Me encantas Muchisimo bb💞💞",
+
+    "Me encanta tu forma de ser bb💞",
+
+    "a vecs me pregunto, como alguien puede sar tannn lindaa :3",
+
+    "Llevare siempre conmigo cada momento compartido contigo <3",
+
+    "Eres la mejor mi niña, no lo olvides nunca💗💗",
+
+    "Tienes un corazón muy bonito <3",
+
+    "Yienes unos ijitos bien lindos :D",
+
+    "Ojala pudiera abrazaarte ahora mismo :3"
+
+];
+
+let aleatorio = Math.floor(Math.random() * mensajes.length);
+
+document.getElementById("mensaje").innerHTML =
+mensajes[aleatorio];
+
+let fechaEspecial = new Date("June 24, 2026");
+
+let ahora = new Date();
+
+if(ahora >= fechaEspecial){
+
+    document.getElementById("botonCumple").innerHTML =
+    "🎂 Abrir sorpresa";
+
+}
+
+function abrirSorpresa(){
+
+    if(ahora >= fechaEspecial){
+
+        document.getElementById("sorpresa").style.display = "block";
+
+    }
+
+}
+
+function verificar(){
+
+    let clave = document.getElementById("password").value;
+
+    if(clave == "nana67"){
+
+        document.getElementById("login").style.display = "none";
+
+    }
+
+    else{
+
+        alert("Esta no es la Clave we");
+
+    }
+
+}
+
+</script>
+</div>
+
+<section>
+
+    <h2>
+        🔒 Mensaje no disponible...
+    </h2>
+
+    <button id="botonCumple" onclick="abrirSorpresa()">
+
+        Disponible el 24 de junio 💖
+
+    </button>
+
+    <div id="sorpresa" style="display:none;">
+
+        <p>
+            Feliz cumpleaños mi niña 💖
+        </p>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>

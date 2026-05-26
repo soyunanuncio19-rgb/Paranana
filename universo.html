@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Universo 💖</title>
+
+<style>
+
+body{
+    margin:0;
+    overflow:hidden;
+    background:black;
+    touch-action:none;
+}
+
+canvas{
+
+    display:block;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    z-index:1;
+
+}
+
+.orbita{
+
+    position:absolute;
+
+    perspective:1200px;
+
+    top:50%;
+    left:50%;
+
+    width:0;
+    height:0;
+
+    transform-style:preserve-3d;
+
+z-index:5;
+
+}
+
+.foto{
+
+    position:absolute;
+
+    width:90px;
+
+    border-radius:20px;
+
+    box-shadow:0px 0px 20px white;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    transition:2s;
+
+}
+
+.texto{
+
+    position:absolute;
+
+    color:#ff0033;
+
+    font-size:18px;
+
+    font-family:'Great Vibes', cursive;
+
+    text-shadow:
+0px 0px 4px #ff1744,
+0px 0px 10px #ff1744;
+
+    white-space:nowrap;
+
+    opacity:0;
+
+    transition:2s;
+
+    font-weight:bold;
+
+letter-spacing:1px;
+
+}
+
+#sol{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    z-index:2;
+
+    transform:translate(-50%,-50%) scale(0.3);
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    #fff6b0 0%,
+    #ffd700 30%,
+    #ffae00 60%,
+    rgba(255,170,0,0.1) 100%);
+
+    box-shadow:
+    0px 0px 50px #ffd700,
+    0px 0px 120px #ffae00,
+    0px 0px 200px white;
+
+    opacity:0;
+
+    transition:3s;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="sol"></div>
+
+<div class="orbita">
+
+    <img src="foto ella 1.png" class="foto">
+
+    <img src="foto2.png" class="foto">
+
+    <img src="foto3.png" class="foto">
+
+<img src="foto4.png" class="foto">
+
+<img src="foto5.png" class="foto">
+
+    <div class="texto">Te amo ❤️</div>
+
+    <div class="texto">I love you 💖</div>
+
+    <div class="texto">Kocham cię
+💕</div>
+
+    <div class="texto">愛してる 💗</div>
+
+    <div class="texto">Je t'aime
+💖</div>
+
+<div class="texto">Eres preciosa ✨</div>
+
+<div class="texto">أحبك يا حبيبتي الجميلة
+💕</div>
+
+<div class="texto">Meu amor 💗</div>
+
+<div class="texto">lon sayang gata❤️</div>
+
+<div class="texto">💖</div>
+
+<div class="texto">✨</div>
+
+<div class="texto">🌸</div>
+
+<div class="texto">💫</div>
+
+<div class="texto">Ti amo 💕</div>
+
+<div class="texto">Ich liebe dich ❤️</div>
+
+<div class="texto">Saranghae 💖</div>
+
+<div class="texto">Ya tebya lyublyu 💗</div>
+
+<div class="texto">Ani ohev otach 💞</div>
+
+<div class="texto">Aishiteru 🌸</div>
+
+<div class="texto">Ngo oiy ney a ❤️</div>
+
+<div class="texto">Main tumse pyaar karta hoon 💖</div>
+
+<div class="texto">Volim te 💕</div>
+
+<div class="texto">Eu te amo ✨</div>
+
+<div class="texto">T’estimo 💗</div>
+
+<div class="texto">Jeg elsker dig 💖</div>
+
+<div class="texto">Ek het jou lief 🌸</div>
+
+<div class="texto">Mahal kita 💞</div>
+
+<div class="texto">Ngiyakuthanda ❤️</div>
+
+<div class="texto">🪐</div>
+
+</div>
+
+<canvas id="espacio"></canvas>
+
+<script>
+
+let canvas =
+document.getElementById("espacio");
+
+let ctx =
+canvas.getContext("2d");
+
+let sol =
+document.getElementById("sol");
+
+canvas.width = window.innerWidth;
+
+canvas.height = window.innerHeight;
+
+let estrellas = [];
+
+let rotacion = 0;
+
+let tiempo = 0;
+
+let rotY = 0;
+let rotX = 0;
+let velocidadRotacion = 0;
+
+let mostrarOrbitas = false;
+
+for(let i = 0; i < 700; i++){
+
+    estrellas.push({
+
+        x:Math.random() * canvas.width,
+
+        y:Math.random() * canvas.height,
+
+        z:Math.random() * canvas.width
+
+    });
+
+}
+
+setTimeout(()=>{
+
+    sol.style.opacity = "1";
+
+    sol.style.transform =
+    "translate(-50%,-50%) scale(1)";
+
+    mostrarOrbitas = true;
+
+    let objetos =
+    document.querySelectorAll(".foto,.texto");
+
+    objetos.forEach((o)=>{
+
+        o.style.opacity = "1";
+
+    });
+
+},3000);
+
+function animar(){
+
+    tiempo += 0.01;
+
+    if(tiempo < 2){
+
+        rotacion += 0.03;
+
+    }
+
+    else if(tiempo < 4){
+
+        rotacion +=
+        0.03 * (1 - (tiempo - 2) / 2);
+
+    }
+
+    ctx.fillStyle = "black";
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    for(let estrella of estrellas){
+
+        let velocidad = 25;
+
+if(tiempo > 4){
+
+    velocidad = 6;
+
+}
+
+estrella.z -= velocidad;
+
+        if(estrella.z <= 0){
+
+            estrella.z = canvas.width;
+
+        }
+
+        let angulo = rotacion;
+
+        let rotX =
+        (estrella.x - canvas.width/2)
+        * Math.cos(angulo)
+        -
+        (estrella.y - canvas.height/2)
+        * Math.sin(angulo);
+
+        let rotYEstrella =
+        (estrella.x - canvas.width/2)
+        * Math.sin(angulo)
+        +
+        (estrella.y - canvas.height/2)
+        * Math.cos(angulo);
+
+        let x =
+        rotX * (canvas.width / estrella.z);
+
+        let y =
+        rotYEstrella *
+        (canvas.width / estrella.z);
+
+        let size =
+        (1 - estrella.z / canvas.width) * 5;
+
+        ctx.fillStyle = "white";
+
+        ctx.beginPath();
+
+        ctx.arc(
+            x + canvas.width/2,
+            y + canvas.height/2,
+            size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+
+    }
+
+
+
+    if(mostrarOrbitas){
+
+        let objetos =
+        document.querySelectorAll(".foto,.texto");
+
+        objetos.forEach((objeto,i)=>{
+
+            let angulo =
+(i * 2.3) + Math.sin(i * 5);
+
+let altura =
+(i * 0.9);
+
+            let radio =
+180 + Math.sin(i * 7) * 90;
+
+let x =
+Math.cos(angulo + rotY)
+* radio;
+
+let z =
+Math.sin(angulo + rotY)
+* radio;
+
+let y =
+Math.sin(altura + rotX)
+* (120 + Math.cos(i * 3) * 80);
+
+            objeto.style.transform =
+
+`translate(-50%,-50%)
+translate3d(${x}px,${y}px,${z}px)`;
+
+            let opacidad =
+(z + 350) / 700;
+
+if(z < -100){
+
+    opacidad = 0;
+
+}
+
+objeto.style.opacity = opacidad;
+            let escala =
+0.6 + ((z + 350) / 700) * 0.8;
+
+objeto.style.scale = escala;
+
+objeto.style.filter =
+`brightness(${0.7 + ((z + 350)/700)})`;
+
+            
+
+        });
+
+    }
+
+    requestAnimationFrame(animar);
+
+}
+
+animar();
+
+let tocando = false;
+
+let ultimoX = 0;
+let ultimoY = 0;
+
+window.addEventListener(
+"touchstart",
+(e)=>{
+
+    tocando = true;
+
+    ultimoX = e.touches[0].clientX;
+    ultimoY = e.touches[0].clientY;
+
+});
+
+window.addEventListener(
+"touchmove",
+(e)=>{
+
+    if(tocando){
+e.preventDefault();
+        let nuevoX =
+        e.touches[0].clientX;
+
+        let diferencia =
+        nuevoX - ultimoX;
+
+        let nuevoY =
+e.touches[0].clientY;
+
+let diferenciaY =
+nuevoY - ultimoY;
+
+        rotY -= diferencia * 0.002;
+
+rotX -= diferenciaY * 0.004;
+if(rotX > 1.2){
+
+    rotX = 1.2;
+
+}
+
+if(rotX < -1.2){
+
+    rotX = -1.2;
+
+}
+
+        ultimoX = nuevoX;
+        ultimoY = nuevoY;
+
+    }
+
+});
+
+window.addEventListener(
+"touchend",
+()=>{
+
+    tocando = false;
+
+});
+
+</script>
+
+</body>
+
+</html>

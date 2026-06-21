@@ -12,7 +12,7 @@ body{
     margin:0;
     background:black;
     overflow-x:hidden;
-    overflow-y:auto;
+    overflow-y:hidden;
 
     color:white;
 
@@ -309,6 +309,8 @@ transform:translateX(-50%) translateY(0);
 
     opacity:0;
 
+    visibility:hidden;
+
     pointer-events:none;
 
     transition:1s;
@@ -425,6 +427,8 @@ transform:scale(1);
     transform:translateY(120px);
 
     transition:1.5s;
+
+    display:none;
 
 }
 
@@ -748,17 +752,7 @@ Feliz cumpleaños :DD 💖
 </section>
 
 <script>
-window.addEventListener("scroll",()=>{
 
-    if(window.scrollY > window.innerHeight){
-
-        segunda.style.opacity = "1";
-
-        segunda.style.pointerEvents = "auto";
-
-    }
-
-});
 const frases = [
 
 "Hola preciosa 💖",
@@ -793,6 +787,7 @@ let siguienteZona = 0;
 let seguirFrases = true;
 let segunda =
 document.getElementById("segundaParte");
+
 let carta =
 document.getElementById("carta");
 
@@ -1103,13 +1098,19 @@ escribirTexto(frases[0]);
 
 abrir.onclick = ()=>{
 
-    carta.classList.add("mostrar");
+    carta.style.display="flex";
 
-    carta.scrollIntoView({
+    setTimeout(()=>{
 
-        behavior:"smooth"
+        carta.classList.add("mostrar");
 
-    });
+        carta.scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    },100);
 
 };
 window.addEventListener("scroll",()=>{
@@ -1117,7 +1118,10 @@ window.addEventListener("scroll",()=>{
 let posicion =
 segunda.getBoundingClientRect().top;
 
-if(posicion < window.innerHeight){
+
+if(posicion < window.innerHeight * 0.8){
+
+    segunda.style.visibility="visible";
 
     segunda.style.opacity="1";
 

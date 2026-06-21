@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Cumpleaños 💖</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+body{
+
+    margin:0;
+    background:black;
+    overflow-x:hidden;
+    overflow-y:auto;
+
+    color:white;
+
+    font-family:sans-serif;
+
+}
+#cumple{
+
+    position:absolute;
+
+    top:42%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:90%;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:70px;
+
+    font-weight:bold;
+
+    opacity:0;
+
+    text-shadow:
+    0 0 20px red,
+    0 0 40px red,
+    0 0 80px red;
+
+    animation:latido 2s infinite;
+
+}
+@keyframes latido{
+
+    0%{
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+    }
+
+    50%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(1.08);
+
+    }
+
+    100%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    }
+
+}
+.fraseFlotante{
+
+    position:absolute;
+
+    color:white;
+
+    font-size:16px;
+
+    pointer-events:none;
+
+    text-shadow:
+0 0 5px #ff7eb3,
+0 0 10px #ff7eb3;
+
+    animation:subir 6s linear forwards;
+
+}
+.palabra{
+
+    position:absolute;
+
+    color:white;
+
+    font-size:9px;
+
+    white-space:nowrap;
+
+    text-shadow:
+    0 0 5px #ff7eb3,
+    0 0 10px #ff7eb3;
+
+    transition:1s;
+
+}
+@keyframes subir{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(0px)
+        translateX(0px);
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translateY(-250px)
+        translateX(var(--lado));
+
+    }
+
+}
+@media(max-width:768px){
+
+    #texto{
+
+        font-size:26px;
+
+        padding:20px;
+
+    }
+
+    #cumple{
+
+        font-size:42px;
+
+        width:90%;
+
+        line-height:1.3;
+
+    }
+
+    .fraseFlotante{
+
+    font-size:14px;
+
+    max-width:180px;
+
+    text-align:center;
+
+}
+
+}
+
+
+
+#corazon{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:
+    translate(-50%,-50%);
+    animation:
+latidoCorazon 2s infinite;
+}
+
+#mensaje{
+
+    position:absolute;
+
+    top:78%;
+
+    color:white;
+
+    font-size:20px;
+
+    text-align:center;
+
+    width:80%;
+
+    opacity:0;
+
+    transition:2s;
+
+    text-shadow:
+    0 0 10px pink,
+    0 0 20px pink;
+
+}
+
+
+#mensaje{
+
+    top:72%;
+
+    font-size:16px;
+
+}
+
+
+@keyframes latidoCorazon{
+
+    0%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(1.08);
+
+    }
+
+    100%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    }
+
+}
+#bajar{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    width:100%;
+
+    text-align:center;
+
+    color:#ffb6d9;
+
+    font-family:'Dancing Script', cursive;
+
+    font-size:24px;
+
+    opacity:0;
+
+    animation:flotar 2s infinite;
+
+}
+
+
+@keyframes flotar{
+
+0%{
+
+transform:translateX(-50%) translateY(0);
+
+}
+
+50%{
+
+transform:translateX(-50%) translateY(10px);
+
+}
+
+100%{
+
+transform:translateX(-50%) translateY(0);
+
+}
+
+}
+
+#segundaParte{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:1s;
+
+    margin-top:100vh;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+#mensajeFinal{
+
+    color:white;
+
+    font-size:22px;
+
+    text-align:center;
+
+    width:80%;
+
+    max-width:600px;
+
+    margin-bottom:30px;
+
+    text-shadow:
+    0 0 10px pink,
+    0 0 20px pink;
+
+}
+
+
+#abrir{
+
+    margin-top:20px;
+
+    padding:14px 45px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#ff7eb3;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px pink,
+    0 0 30px #ff7eb3;
+
+    animation:boton 2s infinite;
+
+}
+
+
+@keyframes boton{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.06);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+#texto{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:90%;
+
+    font-size:26px;
+
+    text-align:center;
+
+    opacity:0;
+
+    transition:1s;
+
+}
+#carta{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:translateY(120px);
+
+    transition:1.5s;
+
+}
+
+
+#carta.mostrar{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+    transform:translateY(0);
+
+}
+
+
+#textoCarta{
+
+background:
+linear-gradient(
+135deg,
+rgba(255,126,179,0.15),
+rgba(255,255,255,0.05)
+);
+
+border:1px solid rgba(255,182,217,0.5);
+
+border-radius:25px;
+
+padding:25px;
+
+width:85%;
+
+max-width:700px;
+
+color:white;
+
+font-size:17px;
+
+line-height:1.7;
+
+box-shadow:
+
+0 0 25px pink,
+inset 0 0 20px rgba(255,255,255,0.1);
+
+}
+</style>
+</head>
+<body>
+<div id="texto"></div>
+<div id="cumple">
+
+    FELIZ CUMPLEAÑOS :D 🎂✨
+
+</div>
+<div id="corazon"></div>
+<div id="bajar">
+↓ desliza hacia abajo 💖
+</div>
+<section id="segundaParte">
+
+<div id="mensajeFinal">
+
+Mi niña hermosa 💖
+
+<br><br>
+
+No existen palabras suficientes
+para explicar lo especial que eres ✨
+
+<br><br>
+
+Me alegra muchísimo tenerte en mi vida ❤️
+
+<br><br>
+
+Tengo algo más para ti...
+
+</div>
+
+
+<button id="abrir">
+
+Abrir 💌
+
+</button>
+
+
+</section>
+
+
+<section id="carta">
+
+<div id="textoCarta">
+    
+
+💌 Para ti
+
+<br><br>
+
+Feliz cumpleaños mi princesita hermosa :D 💖
+
+<br><br>
+
+La verdad llevo un tiempo pensando qué escribir aquí, porque aunque parezca fácil, cuando se trata de ti siempre siento que las palabras se quedan cortas.
+
+<br><br>
+
+Quería hacer algo bonito para este día, algo que pudieras guardar y volver a ver o leer cuando quisieras, porque una fecha así merece algo más que un simple "feliz cumpleaños". Merece algo hecho especialmente para ti.
+
+<br><br>
+
+Y bueno, aquí está un random intentando expresar con palabras lo importante que eres para mí.
+
+<br><br>
+
+Antes que nada quiero agradecerte por estos meses que hemos compartido juntos. Puede que para algunas personas unos 4 meses o poco más no parezcan mucho, pero para mí han sido meses llenos de momentos que valoro muchísimo.
+
+<br><br>
+
+Momentos que me han hecho reír, momentos que recuerdo cuando estoy aburrido, momentos que simplemente me hacen feliz, y gran parte de ellos tienen algo en común...
+
+<br><br>
+
+Tú.
+
+<br><br>
+
+Me gusta pensar en todo lo que hemos vivido desde que nos conocimos, porque si alguien me hubiera dicho hace tiempo que una niña tan preciosa iba a volverse tan importante para mí, probablemente no lo habría creído.
+
+<br><br>
+
+Pero pasó.
+
+<br><br>
+
+Y ahora aquí estoy, escribiéndote una carta para tu cumpleaños porque te has convertido en una de las personas más importantes en mi vida.
+
+<br><br>
+
+Gracias por cada conversación que hemos tenido, por cada mensaje, por cada vez que compartimos tiempo juntos, por esas cosas pequeñas que parecen simples pero que terminan significando mucho más de lo que imaginas.
+
+<br><br>
+
+Gracias por acompañarme durante estos meses, mi bb preciosa.
+
+<br><br>
+
+También gracias por todas esas veces que jugamos juntos. Aún recuerdo cuando no querías instalar el maincra porque pensabas que te iba a meter virus a la PC xD.
+
+<br><br>
+
+Y ahora míranos, jugando casi diario Minecraft, pasando tiempo juntos, minando, construyendo, explorando o haciendo cualquier cosa XD.
+
+<br><br>
+
+Son momentos sencillos, pero sinceramente son de mis favoritos.
+
+<br><br>
+
+También cuando jugamos Free, momentos donde nos reíamos o donde te hacía perder xd.
+
+<br><br>
+
+Perdón por esas veces que perdíamos por mi culpa, y gracias por todas las veces que me carreaste, son tantas que doy pena xD.
+
+<br><br>
+
+Juegas bastante bien, de verdad eres de lo mejor.
+
+<br><br>
+
+Disfruto muchísimo jugar contigo y pasar tiempo contigo aunque no ganemos :C.
+
+<br><br>
+
+Lo mismo pasa con Roblox, porque al final no importa qué juego estemos jugando, lo importante para mí siempre termina siendo que estemos compartiendo tiempo juntos.
+
+<br><br>
+
+Y eso hace que cualquier momento sea especial.
+
+<br><br>
+
+Hay algo que quizá no te digo tan seguido como debería, y es que me haces feliz.
+
+<br><br>
+
+De verdad.
+
+<br><br>
+
+Más de lo que imaginas.
+
+<br><br>
+
+Me gusta cuando recibo un mensaje tuyo, me gusta cuando hablamos, me gusta cuando jugamos, me gusta cuando me cuentas cosas de tu día, me gusta cuando nos reímos de cualquier cosa.
+
+<br><br>
+
+Y también me gusta escucharte.
+
+<br><br>
+
+Aunque no nos mandemos audios muy seguido, cada vez que escucho tu voz me parece muy bonita, una voz linda que solo tú tienes.
+
+<br><br>
+
+No sé cómo explicarlo mejor, simplemente me gusta.
+
+<br><br>
+
+Y creo que son ese tipo de detalles pequeños los que terminan haciendo especial a una persona.
+
+<br><br>
+
+Porque sí, eres muyyy hermosa.
+
+<br><br>
+
+Tienes unos ojitos tan lindos, un cabello precioso y una sonrisa que me encanta.
+
+<br><br>
+
+Pero lo que más me gusta de ti siempre será la persona que eres.
+
+<br><br>
+
+Tu forma de ser, tu forma de hacerme sentir, tus momentos random, tus momentos tiernos y todas esas cosas que te hacen ser tú.
+
+<br><br>
+
+Por eso quiero que hoy recuerdes algo muy importante:
+
+<br><br>
+
+Eres una persona increíble.
+
+<br><br>
+
+Mucho más de lo que a veces crees.
+
+<br><br>
+
+Y espero nunca olvides eso.
+
+<br><br>
+
+Espero que este nuevo año de tu vida esté lleno de cosas bonitas como tú, que cumplas tus metas, que tengas muchísimos momentos felices y que sonrías muchísimo.
+
+<br><br>
+
+Y que cada vez que algo salga mal recuerdes que sigues siendo una persona fuerte, valiosa y especial.
+
+<br><br>
+
+Porque lo eres.
+
+<br><br>
+
+Y mucho.
+
+<br><br>
+
+No sé qué vaya a pasar dentro de meses o años, nadie puede saberlo.
+
+<br><br>
+
+Pero sí sé algo:
+
+<br><br>
+
+Ahora mismo me importa muchísimo verte feliz.
+
+<br><br>
+
+Y por eso quise escribirte esto.
+
+<br><br>
+
+Porque hoy es tu cumpleaños, porque eres una persona muy especial para mí y porque quiero que quede guardado aquí, en esta página, un pequeño recuerdo de todo el cariño que te tengo.
+
+<br><br>
+
+Tal vez no sea el mejor regalo, el más grande o el más caro del mundo.
+
+<br><br>
+
+Pero cada cosa aquí fue hecha pensando en ti.
+
+<br><br>
+
+Cada detalle, cada palabra, cada minuto invertido...
+
+<br><br>
+
+Todo tiene la misma razón de ser creado:
+
+<br><br>
+
+Tú.
+
+<br><br>
+
+Así que feliz cumpleaños, mi niña preciosa :D 💖
+
+<br><br>
+
+Gracias por estos meses, gracias por todos los momentos, gracias por ser tú y gracias por permitirme formar parte de tu vida.
+
+<br><br>
+
+Te quiero muchísimo mi amor.
+
+<br><br>
+
+Feliz cumpleaños :DD 💖
+
+</div>
+
+</section>
+
+<script>
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > window.innerHeight){
+
+        segunda.style.opacity = "1";
+
+        segunda.style.pointerEvents = "auto";
+
+    }
+
+});
+const frases = [
+
+"Hola preciosa 💖",
+
+"Hoy no es un día cualquiera...",
+
+"Porque hoy cumple años",
+
+"la niña más bonita del mundo ✨"
+
+];
+
+let velocidad = 70;
+
+let i = 0;
+
+let texto =
+document.getElementById("texto");
+
+let cumple =
+document.getElementById("cumple");
+
+let corazon =
+document.getElementById("corazon");
+let mensaje =
+
+document.getElementById("mensaje");
+let bajar =
+document.getElementById("bajar");
+let siguienteZona = 0;
+
+let seguirFrases = true;
+let segunda =
+document.getElementById("segundaParte");
+let carta =
+document.getElementById("carta");
+
+let abrir =
+document.getElementById("abrir");
+const mensajesBonitos = [
+
+
+"💖 Eres mi persona favorita",
+
+"✨ Tu sonrisa es hermosaa",
+
+"💕 Tus ojitos son preciosos",
+
+"💖 Mi niña hermosa",
+"💕 Mi princesita bella",
+"✨ Mi niña dormilona",
+"💗 Nivel de belleza: infinito",
+
+"🌸 Mi bb preciosa",
+"❤️ Eres la mejorr",
+"Mi Princesita Bella <3",
+"Mi Mundo entero :D",
+" Amo pasar tiempo contigo✨",
+" Amo jugar contigo",
+"🌸 Eres las mas bella",
+"💕 Tienes una sonrisa tan linda",
+"💗 Eres increíble",
+"💗 Mi personita favorita",
+"Me encanta tu voz:3",
+"🌸 Tienes un corazón precioso",
+" Eres única <33",
+"💗 La niña más bonita",
+"💖 La niña más bonita",
+"❤️ Mi princesa hermosa",
+"✨ Gracias por todos los momentos",
+"🌸 Me encantas muchísimo",
+" Mi princesita dormilona<333 ",
+"💕 Siempre me haces sonreir :D"
+
+
+
+
+
+
+
+];
+const palabrasCorazon = [
+
+"Te amo ❤️",
+
+"I love you 💖",
+
+"Je t'aime 💕",
+
+"Aishiteru ✨",
+
+"Saranghae 💗",
+
+"Ti amo ❤️",
+
+"أحبك 💖",
+
+"Eu te amo 💕",
+
+"Munsmawa ✨",
+
+"Wo ai ni ❤️",
+
+"Te quiero 💗",
+"愛してます ",
+"ຂ້ອຍ​ຮັກ​ເຈົ້າe<3",
+"我愛你💗",
+"Te iubesc",
+
+"Melɔ̃ wò💗"
+
+];
+
+function escribirTexto(textoCompleto){
+
+    texto.innerHTML = "";
+
+    let letra = 0;
+
+    let intervalo = setInterval(()=>{
+
+        texto.innerHTML +=
+        textoCompleto[letra];
+
+        letra++;
+
+        if(letra >= textoCompleto.length){
+
+            clearInterval(intervalo);
+
+            setTimeout(()=>{
+
+                texto.style.opacity = 0;
+
+                setTimeout(()=>{
+
+                    i++;
+
+                    if(i < frases.length){
+
+                        texto.style.opacity = 1;
+
+                        escribirTexto(frases[i]);
+
+                    }
+                    else{
+
+
+    cumple.style.opacity = "1";
+
+    lanzarFrases();
+
+    setTimeout(()=>{
+
+        cumple.style.opacity = "0";
+
+seguirFrases = false;
+
+crearCorazon();
+setTimeout(()=>{
+
+
+
+    bajar.style.opacity = "1";
+
+
+document.body.style.overflowY = "auto";
+
+
+},9000);
+
+    },8000);
+
+}
+
+                },1000);
+
+            },2000);
+
+        }
+
+    },velocidad);
+
+
+
+}
+
+
+function crearFrase(){
+
+    let frase =
+    document.createElement("div");
+
+    frase.className =
+    "fraseFlotante";
+
+    frase.innerHTML =
+    mensajesBonitos[
+        Math.floor(
+            Math.random() *
+            mensajesBonitos.length
+        )
+    ];
+
+let zona = siguienteZona;
+
+siguienteZona++;
+
+if(siguienteZona > 2){
+
+    siguienteZona = 0;
+
+}
+
+if(zona == 0){
+
+    frase.style.left =
+    (5 + Math.random()*20) + "%";
+
+}
+else if(zona == 1){
+
+    frase.style.left =
+    (35 + Math.random()*30) + "%";
+
+}
+else{
+
+    frase.style.left =
+    (75 + Math.random()*20) + "%";
+
+}
+
+frase.style.bottom =
+(20 + Math.random()*80) + "px";
+let direccion =
+(Math.random() * 200) - 100;
+
+frase.style.setProperty(
+"--lado",
+direccion + "px"
+);
+
+    document.body.appendChild(frase);
+
+    setTimeout(()=>{
+
+        frase.remove();
+
+    },6000);
+
+}
+function lanzarFrases(){
+
+    if(!seguirFrases){
+
+        return;
+
+    }
+
+    crearFrase();
+
+    setTimeout(
+
+        lanzarFrases,
+
+        500 + Math.random() * 700
+
+    );
+
+}
+function crearCorazon(){
+
+    corazon.style.opacity = "1";
+    corazon.innerHTML = "";
+let escala = 18;
+
+if(window.innerWidth < 768){
+
+    escala = 9;
+
+}
+
+    
+
+for(let t=0;t<6.28;t+=0.10){
+
+        let x =
+        16*Math.pow(
+        Math.sin(t),3);
+
+        let y =
+-(13*Math.cos(t)
+-5*Math.cos(2*t)
+-2*Math.cos(3*t)
+-Math.cos(4*t));
+        let palabra =
+        document.createElement("div");
+
+        palabra.className =
+        "palabra";
+
+        palabra.innerHTML =
+        palabrasCorazon[
+
+            Math.floor(
+                Math.random() *
+                palabrasCorazon.length
+            )
+        ];
+        palabra.style.transform =
+"translate(-50%,-50%)";
+
+        
+
+palabra.style.left =
+(x*escala)+"px";
+
+palabra.style.top =
+(y*escala)+"px";
+
+        palabra.style.opacity = "0";
+
+        corazon.appendChild(
+            palabra
+        );
+
+        setTimeout(()=>{
+
+            palabra.style.opacity = "1";
+
+        },t*300);
+
+    }
+
+}
+
+texto.style.opacity = 1;
+
+escribirTexto(frases[0]);
+
+
+abrir.onclick = ()=>{
+
+    carta.classList.add("mostrar");
+
+    carta.scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+
+};
+window.addEventListener("scroll",()=>{
+
+let posicion =
+segunda.getBoundingClientRect().top;
+
+if(posicion < window.innerHeight){
+
+    segunda.style.opacity="1";
+
+    segunda.style.pointerEvents="auto";
+
+}
+
+});
+</script>
+
+</body>
+
+</html>
